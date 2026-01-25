@@ -20,5 +20,8 @@ public class BamsongiController : MonoBehaviour
     {
         GetComponent<Rigidbody>().isKinematic = true;
         GetComponent<ParticleSystem>().Play();
+
+        // 밤송이 오브젝트 삭제
+        Destroy(gameObject, 1.0f);
     }
 }
