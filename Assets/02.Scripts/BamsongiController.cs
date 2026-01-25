@@ -21,7 +21,13 @@ public class BamsongiController : MonoBehaviour
         GetComponent<Rigidbody>().isKinematic = true;
         GetComponent<ParticleSystem>().Play();
 
+        transform.parent = collision.transform;
+
+        // transform.parent = null;
+
+        GetComponent<SphereCollider>().enabled = false;
+
         // 밤송이 오브젝트 삭제
-        Destroy(gameObject, 1.0f);
+        Destroy(gameObject, 5.0f);
     }
 }
