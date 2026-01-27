@@ -3,7 +3,10 @@ using UnityEngine;
 public class TargetController : MonoBehaviour
 {
     // 속도는 변수로 관리 (Inspector에서 각 오브젝트마다 다르게 설정 가능)
-    [SerializeField] float speed = 3.0f;
+    public float speed = 3.0f;
+
+    // 이 타겟에 맞췄을 때 획득하는 점수 (Inspector에서 설정)
+    public int score = 10;
 
     // 현재 x 위치와 방향을 추적
     float currentX;

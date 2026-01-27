@@ -9,6 +9,9 @@ using UnityEngine;
 /// </summary>
 public class BamsongiController : MonoBehaviour
 {
+    // 총 누적 점수 (static: 모든 밤송이가 공유하는 변수)
+    public static int totalScore = 0;
+
     // 게임 시작 시 호출되는 메서드
     void Start()
     {
@@ -40,6 +43,15 @@ public class BamsongiController : MonoBehaviour
 
         // 충돌한 오브젝트의 자식으로 설정 (타겟에 붙어서 함께 이동)
         transform.parent = collision.transform;
+
+        // 충돌한 오브젝트가 타겟인지 확인하고 점수 누적
+        TargetController target = collision.gameObject.GetComponent<TargetController>();
+        if (target != null)
+        {
+            // 총점에 타겟 점수 추가
+            totalScore += target.score;
+            Debug.Log("타겟 적중! 획득 점수: " + target.score + " / 총점: " + totalScore);
+        }
 
         // 부모 해제 코드 (비활성화)
         // transform.parent = null;
