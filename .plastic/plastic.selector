@@ -1,0 +1,4 @@
+repository "bamsongi/bamsongi@14569623275256@cloud"
+  path "/"
+    br "/main"
+    co "/main"
